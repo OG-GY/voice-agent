@@ -1,0 +1,276 @@
+{
+  "ready": {
+    "type": "ready",
+    "session_id": "517c1a12eaed",
+    "sample_rate": 16000,
+    "limits": {
+      "max_text_chars": 500.0,
+      "max_utterance_seconds": 30.0
+    }
+  },
+  "greeting_turn": {
+    "type": "turn",
+    "turn": 0,
+    "reply": "Thank you for calling The Copper Pot. I can book a table, cancel a booking, or answer questions about our hours. How may I help you?",
+    "ended": false,
+    "transcript": "",
+    "source": "greeting",
+    "trace": {
+      "turn": 0,
+      "intent": "nomatch",
+      "intent_score": 0.0,
+      "ranked_intents": [],
+      "entities": [],
+      "slot_changes": [],
+      "phase_from": "greeting",
+      "phase_to": "greeting",
+      "actions": [
+        "greet"
+      ],
+      "reason": "call started",
+      "duration_ms": 0.20759999461006373,
+      "normalized": null
+    },
+    "state": {
+      "phase": "greeting",
+      "task": null,
+      "turn": 0,
+      "slots": {
+        "seating": null,
+        "date": null,
+        "time": null,
+        "party_size": null,
+        "name": null,
+        "title": null,
+        "phone": null,
+        "booking_ref": null
+      }
+    }
+  },
+  "text_turn": {
+    "type": "turn",
+    "turn": 1,
+    "reply": "We're open Tuesday to Sunday, from noon to 10 PM, with last seating at 9 PM. We're closed on Mondays. Would you like me to book a table for you?",
+    "ended": false,
+    "transcript": "what are your timings",
+    "source": "text",
+    "trace": {
+      "turn": 1,
+      "intent": "faq_hours",
+      "intent_score": 0.9,
+      "ranked_intents": [
+        [
+          "faq_hours",
+          0.9
+        ]
+      ],
+      "entities": [],
+      "slot_changes": [],
+      "phase_from": "greeting",
+      "phase_to": "offer_booking",
+      "actions": [
+        "answer_hours",
+        "offer_booking"
+      ],
+      "reason": "answered faq_hours; offered a booking once",
+      "duration_ms": 0.599599996348843,
+      "normalized": null
+    },
+    "state": {
+      "phase": "offer_booking",
+      "task": "enquiry",
+      "turn": 1,
+      "slots": {
+        "seating": null,
+        "date": null,
+        "time": null,
+        "party_size": null,
+        "name": null,
+        "title": null,
+        "phone": null,
+        "booking_ref": null
+      }
+    }
+  },
+  "error_bad_json": {
+    "type": "error",
+    "code": "bad_json",
+    "message": "The message could not be understood."
+  },
+  "error_stt_unavailable": {
+    "type": "error",
+    "code": "stt_unavailable",
+    "message": "Speech recognition is not available right now."
+  },
+  "hangup_turn": {
+    "type": "turn",
+    "turn": 2,
+    "reply": "",
+    "ended": true,
+    "transcript": "",
+    "source": "text",
+    "trace": {
+      "turn": 2,
+      "intent": "nomatch",
+      "intent_score": 0.0,
+      "ranked_intents": [],
+      "entities": [],
+      "slot_changes": [],
+      "phase_from": "offer_booking",
+      "phase_to": "end",
+      "actions": [],
+      "reason": "caller hung up during offer_booking",
+      "duration_ms": 0.15690000145696104,
+      "normalized": null
+    },
+    "state": {
+      "phase": "end",
+      "task": "enquiry",
+      "turn": 2,
+      "slots": {
+        "seating": null,
+        "date": null,
+        "time": null,
+        "party_size": null,
+        "name": null,
+        "title": null,
+        "phone": null,
+        "booking_ref": null
+      }
+    }
+  },
+  "hangup_close_code": 1000,
+  "closing": {
+    "type": "closing",
+    "reason": "restart"
+  },
+  "audio_transcript": {
+    "type": "transcript",
+    "text": "what are your timings"
+  },
+  "audio_turn": {
+    "type": "turn",
+    "turn": 1,
+    "reply": "We're open Tuesday to Sunday, from noon to 10 PM, with last seating at 9 PM. We're closed on Mondays. Would you like me to book a table for you?",
+    "ended": false,
+    "transcript": "what are your timings",
+    "source": "audio",
+    "trace": {
+      "turn": 1,
+      "intent": "faq_hours",
+      "intent_score": 0.9,
+      "ranked_intents": [
+        [
+          "faq_hours",
+          0.9
+        ]
+      ],
+      "entities": [],
+      "slot_changes": [],
+      "phase_from": "greeting",
+      "phase_to": "offer_booking",
+      "actions": [
+        "answer_hours",
+        "offer_booking"
+      ],
+      "reason": "answered faq_hours; offered a booking once",
+      "duration_ms": 0.6503000040538609,
+      "normalized": null
+    },
+    "state": {
+      "phase": "offer_booking",
+      "task": "enquiry",
+      "turn": 1,
+      "slots": {
+        "seating": null,
+        "date": null,
+        "time": null,
+        "party_size": null,
+        "name": null,
+        "title": null,
+        "phone": null,
+        "booking_ref": null
+      }
+    }
+  },
+  "short_audio_turn": {
+    "type": "turn",
+    "turn": 2,
+    "reply": "Sorry, I didn't catch that. Would you like me to book a table for you?",
+    "ended": false,
+    "transcript": "",
+    "source": "audio",
+    "trace": {
+      "turn": 2,
+      "intent": "nomatch",
+      "intent_score": 0.0,
+      "ranked_intents": [],
+      "entities": [],
+      "slot_changes": [],
+      "phase_from": "offer_booking",
+      "phase_to": "offer_booking",
+      "actions": [
+        "reprompt",
+        "offer_booking"
+      ],
+      "reason": "did not understand: asked again",
+      "duration_ms": 0.21270000434014946,
+      "normalized": null
+    },
+    "state": {
+      "phase": "offer_booking",
+      "task": "enquiry",
+      "turn": 2,
+      "slots": {
+        "seating": null,
+        "date": null,
+        "time": null,
+        "party_size": null,
+        "name": null,
+        "title": null,
+        "phone": null,
+        "booking_ref": null
+      }
+    }
+  },
+  "idle_turn": {
+    "type": "turn",
+    "turn": 1,
+    "reply": "Are you still there?",
+    "ended": false,
+    "transcript": "",
+    "source": "text",
+    "trace": {
+      "turn": 1,
+      "intent": "nomatch",
+      "intent_score": 0.0,
+      "ranked_intents": [],
+      "entities": [],
+      "slot_changes": [],
+      "phase_from": "greeting",
+      "phase_to": "greeting",
+      "actions": [
+        "check_presence"
+      ],
+      "reason": "silence 1: checked presence",
+      "duration_ms": 0.37290000182110816,
+      "normalized": null
+    },
+    "state": {
+      "phase": "greeting",
+      "task": null,
+      "turn": 1,
+      "slots": {
+        "seating": null,
+        "date": null,
+        "time": null,
+        "party_size": null,
+        "name": null,
+        "title": null,
+        "phone": null,
+        "booking_ref": null
+      }
+    }
+  },
+  "busy_close_code": 1013
+}
