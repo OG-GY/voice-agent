@@ -1,0 +1,53 @@
+[project]
+name = "voice-agent-backend"
+version = "0.1.0"
+description = "Voice receptionist backend for The Copper Pot (rule-based brain, no LLM decisions)"
+readme = "README.md"
+authors = [
+    { name = "OG-GY", email = "iamkhalil2005@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.162.0",
+    "faster-whisper>=1.2.1",
+    "numpy>=2.5.4",
+    "pydantic>=2.14.1",
+    "pydantic-settings>=2.16.1",
+    "rapidfuzz>=3.14.6",
+    "tzdata>=2026.5",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+asyncio_mode = "auto"
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+plugins = ["pydantic.mypy"]
+
+# faster-whisper ships no type information.
+[[tool.mypy.overrides]]
+module = ["faster_whisper", "faster_whisper.*"]
+ignore_missing_imports = true
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "mypy>=2.4.0",
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.1",
+    "ruff>=0.17.2",
+]

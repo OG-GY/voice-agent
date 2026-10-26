@@ -1,0 +1,32 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Frontend
+node_modules/
+.next/
+
+# Local planning notes
+plans/
+
+# Local database files (may hold personal data once real callers exist)
+data/
+*.db
+*.db-wal
+*.db-shm
+
+# Local models / audio
+models/
+*.wav
+*.webm
